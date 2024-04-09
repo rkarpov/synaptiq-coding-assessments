@@ -5,10 +5,20 @@ import DatePickerDisplay, {
 	NEXT_MONTH,
 } from "./DatePickerDisplay";
 
-const DatePickerContainer = () => {
-	const [selectedDate, setSelectedDate] = useState<number | null>(null);
-	const [selectedMonth, setSelectedMonth] = useState<number | null>(null);
-	const [selectedYear, setSelectedYear] = useState<number | null>(null);
+type DatePickerContainerProps = {
+	initialMonth?: number | null;
+	initialYear?: number | null;
+	initialDate?: number | null;
+};
+
+const DatePickerContainer = ({
+	initialMonth = null,
+	initialYear = null,
+	initialDate = null,
+}: DatePickerContainerProps) => {
+	const [selectedDate, setSelectedDate] = useState<number | null>(initialDate);
+	const [selectedMonth, setSelectedMonth] = useState<number | null>(initialMonth);
+	const [selectedYear, setSelectedYear] = useState<number | null>(initialYear);
 
 	const currentDate = new Date();
 	const currentYear =

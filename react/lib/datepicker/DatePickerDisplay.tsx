@@ -68,7 +68,7 @@ const DatePickerDisplay = ({
 				{calendarDates.map((date: number | null, idx: number) => (
 					<button
 						aria-label={date ? `${date}` : "Empty"}
-						aria-pressed={selectedDate === date}
+						aria-selected={selectedDate === date}
 						className={`
 							p-2 flex justify-center hover:bg-blue-700 hover:text-white
 							${date && selectedDate === date && "bg-blue-500 text-white"}
