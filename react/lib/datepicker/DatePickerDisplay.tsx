@@ -35,7 +35,7 @@ const DatePickerDisplay = ({
 			<div className="mt-4 p-4 flex items-center justify-between rounded border border-gray-400">
 				<button
 					aria-label="Previous Month"
-					className="hover:bg-gray-400 rounded p-2"
+					className="hover:bg-gray-400 rounded p-2 transition-colors duration-300"
 					id="left"
 					onClick={() => onMonthChange(PREVIOUS_MONTH)}
 				>
@@ -48,7 +48,7 @@ const DatePickerDisplay = ({
 				</label>
 				<button
 					aria-label="Next Month"
-					className="hover:bg-gray-400 rounded p-2"
+					className="hover:bg-gray-400 rounded p-2 transition-colors duration-300"
 					id="right"
 					onClick={() => onMonthChange(NEXT_MONTH)}
 				>
@@ -73,6 +73,8 @@ const DatePickerDisplay = ({
 							p-2 flex justify-center hover:bg-blue-700 hover:text-white
 							${date && selectedDate === date && "bg-blue-500 text-white"}
 							${date === null ? "cursor-default" : "cursor-pointer"}
+							focus:outline-none focus:bg-blue-700 focus:text-white
+							transition-colors duration-300
 						`}
 						key={`${idx}-date`}
 						onClick={() => onClickDate(date)}
