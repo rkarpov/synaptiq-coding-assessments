@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import { generateCalendar, calendarDates } from "./DatePickerUtils";
 import DatePickerDisplay, {
 	PREVIOUS_MONTH,
@@ -17,7 +17,9 @@ const DatePickerContainer = ({
 	initialDate = null,
 }: DatePickerContainerProps) => {
 	const [selectedDate, setSelectedDate] = useState<number | null>(initialDate);
-	const [selectedMonth, setSelectedMonth] = useState<number | null>(initialMonth);
+	const [selectedMonth, setSelectedMonth] = useState<number | null>(
+		initialMonth
+	);
 	const [selectedYear, setSelectedYear] = useState<number | null>(initialYear);
 
 	const currentDate = new Date();
@@ -33,9 +35,26 @@ const DatePickerContainer = ({
 		month: "long",
 	});
 
+	// only generate calendar dates if month and year changes
 	const calendarDates: calendarDates = useMemo(() => {
 		return generateCalendar({ year: currentYear, month: currentMonthDigit });
 	}, [currentMonthDigit, currentYear]);
+
+	// prevent switching months with a selected date value that exceeds the number of days available
+	// for that calendar month. If for example user selects Jan 21 and clicks to the next month,
+	// then we should expect to see Feb 28 or 29.
+	useEffect(() => {
+		if (selectedDate !== null) {
+			const maxSelectableDate = new Date(
+				currentYear,
+				currentMonthDigit + 1,
+				0
+			).getDate();
+			if (selectedDate > maxSelectableDate) {
+				setSelectedDate(maxSelectableDate);
+			}
+		}
+	}, [selectedDate, currentYear, currentMonthDigit]);
 
 	const handleDateClick = (date: number | null) => {
 		setSelectedDate((prevDate) => (prevDate === date ? null : date));
