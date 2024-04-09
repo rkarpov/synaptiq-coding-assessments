@@ -26,12 +26,12 @@ const DatePickerDisplay = ({
 }: DatePickerDisplayProps) => {
 	return (
 		<>
-			<header
-				aria-label="Date Picker Header"
+			<h2
+				aria-label="Date Picker Heading"
 				className="font-bold text-3xl text-center"
 			>
 				Single Date Picker
-			</header>
+			</h2>
 			<div className="mt-4 p-4 flex items-center justify-between rounded border border-gray-400">
 				<button
 					aria-label="Previous Month"
