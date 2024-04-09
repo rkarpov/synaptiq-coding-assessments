@@ -10,7 +10,10 @@ export type calendarDates = Array<number | null>;
   Generates calendar dates for a given year, month.
   Fills in empty days of the week prior to first calendar day.
  **/
-export const generateCalendar = ({ year, month }: generateCalendarProps): calendarDates => {
+export const generateCalendar = ({
+	year,
+	month,
+}: generateCalendarProps): calendarDates => {
 	const daysInMonth = new Date(year, month + 1, 0).getDate();
 	const firstDayOfMonth = new Date(year, month, 1).getDay();
 	const calendarDates = [];
@@ -24,6 +27,6 @@ export const generateCalendar = ({ year, month }: generateCalendarProps): calend
 	for (let day = 1; day <= daysInMonth; day++) {
 		calendarDates.push(day);
 	}
-    
-	return calendarDates; 
+
+	return calendarDates;
 };

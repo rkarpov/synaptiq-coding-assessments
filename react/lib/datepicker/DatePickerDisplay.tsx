@@ -2,8 +2,8 @@ import React from "react";
 import { calendarDates } from "./DatePickerUtils";
 
 const DATE_NAMES = ["S", "M", "T", "W", "T", "F", "S"];
-const LEFT_ARROW = '←';
-const RIGHT_ARROW = '→';
+const LEFT_ARROW = "←";
+const RIGHT_ARROW = "→";
 export const PREVIOUS_MONTH = "previous";
 export const NEXT_MONTH = "next";
 
