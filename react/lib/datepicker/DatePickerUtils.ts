@@ -3,7 +3,9 @@ type generateCalendarProps = {
 	month: number;
 };
 
-// calendarDates = [ null1, null2, ... nullFirstDayOfMonth-1, day1, ... day31 ]
+/**
+ *  calendarDates = [ null1, null2, ... nullFirstDayOfMonth-1, day1, ... day31 ]
+ **/
 export type calendarDates = Array<number | null>;
 
 /**

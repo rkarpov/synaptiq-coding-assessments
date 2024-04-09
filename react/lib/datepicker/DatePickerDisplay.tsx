@@ -41,7 +41,9 @@ const DatePickerDisplay = ({
 					<span>{LEFT_ARROW}</span>
 				</button>
 				<label aria-label="Selected Month and Year">
-					{currentMonthName} {currentYear}
+					{selectedDate
+						? `${currentMonthName} ${selectedDate}, ${currentYear}`
+						: "Pick a Date"}
 				</label>
 				<button
 					aria-label="Next Month"
