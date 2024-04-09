@@ -3,6 +3,7 @@ type generateCalendarProps = {
 	month: number;
 };
 
+// calendarDates = [ null1, null2, ... nullFirstDayOfMonth-1, day1, ... day31 ]
 export type calendarDates = Array<number | null>;
 
 /**
@@ -24,6 +25,5 @@ export const generateCalendar = ({ year, month }: generateCalendarProps): calend
 		calendarDates.push(day);
 	}
     
-    // calendarDates: [ null1, null2, ...nullFirstDayOfMonth-1, day1, ...day31 ]
 	return calendarDates; 
 };
