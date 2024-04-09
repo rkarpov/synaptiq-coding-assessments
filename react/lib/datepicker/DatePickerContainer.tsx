@@ -35,7 +35,7 @@ const DatePickerContainer = ({
 
 	const calendarDates: calendarDates = useMemo(() => {
 		return generateCalendar({ year: currentYear, month: currentMonthDigit });
-	}, [selectedMonth, selectedYear]);
+	}, [currentMonthDigit, currentYear]);
 
 	const handleDateClick = (date: number | null) => {
 		setSelectedDate((prevDate) => (prevDate === date ? null : date));
