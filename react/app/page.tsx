@@ -1,10 +1,10 @@
-import Datepicker from "@/lib/datepicker/DatePicker";
+import {DatePicker} from "@/lib/datepicker";
 
 export default function Home() {
 	return (
 		<main>
 			<div className="flex justify-center items-center mt-20">
-				<Datepicker />
+				<DatePicker />
 			</div>
 		</main>
 	);
