@@ -32,11 +32,12 @@ const DatePickerDisplay = ({
 			>
 				Single Date Picker
 			</header>
-			<div className="mt-4 px-4 flex justify-between rounded border border-gray-400">
+			<div className="mt-4 p-4 flex items-center justify-between rounded border border-gray-400">
 				<button
 					aria-label="Previous Month"
-					onClick={() => onMonthChange(PREVIOUS_MONTH)}
+					className="hover:bg-gray-400 rounded p-2"
 					id="left"
+					onClick={() => onMonthChange(PREVIOUS_MONTH)}
 				>
 					<span>{LEFT_ARROW}</span>
 				</button>
@@ -47,13 +48,14 @@ const DatePickerDisplay = ({
 				</label>
 				<button
 					aria-label="Next Month"
-					onClick={() => onMonthChange(NEXT_MONTH)}
+					className="hover:bg-gray-400 rounded p-2"
 					id="right"
+					onClick={() => onMonthChange(NEXT_MONTH)}
 				>
 					<span>{RIGHT_ARROW}</span>
 				</button>
 			</div>
-			<div className="mt-2 grid grid-cols-7 gap-0.5 sm:gap-2 md:gap-3 lg:gap-5 xl:gap-7 rounded border border-gray-400">
+			<div className="mt-2 p-2 grid grid-cols-7 gap-0.5 sm:gap-2 md:gap-3 lg:gap-5 xl:gap-7 rounded border border-gray-400">
 				{DATE_NAMES.map((day: String, idx: number) => (
 					<div
 						key={`${idx}-day`}
@@ -67,9 +69,11 @@ const DatePickerDisplay = ({
 					<button
 						aria-label={date ? `${date}` : "Empty"}
 						aria-pressed={selectedDate === date}
-						className={`p-2 flex justify-center ${
-							date === null ? "cursor-default" : "cursor-pointer"
-						} ${date && selectedDate === date && "bg-blue-500 text-white"}`}
+						className={`
+							p-2 flex justify-center hover:bg-blue-700 hover:text-white
+							${date && selectedDate === date && "bg-blue-500 text-white"}
+							${date === null ? "cursor-default" : "cursor-pointer"}
+						`}
 						key={`${idx}-date`}
 						onClick={() => onClickDate(date)}
 						role="gridcell"
