@@ -3,7 +3,7 @@ type generateCalendarProps = {
 	month: number;
 };
 
-type calendarDates = Array<number | null>;
+export type calendarDates = Array<number | null>;
 
 /**
   Generates calendar dates for a given year, month.
