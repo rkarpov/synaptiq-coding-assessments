@@ -4941,6 +4941,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@testing-library/react@npm:^14.3.0":
+  version: 14.3.0
+  resolution: "@testing-library/react@npm:14.3.0"
+  dependencies:
+    "@babel/runtime": ^7.12.5
+    "@testing-library/dom": ^9.0.0
+    "@types/react-dom": ^18.0.0
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: 4aa7e583feac7e9bd93ff981d1dc5113329181bf01ad955af2f748f263dc52cdbff6ead6664a8762481e30b70d7f402aaac7a497d9d1a1747ad6906dfb0eabad
+  languageName: node
+  linkType: hard
+
 "@testing-library/user-event@npm:^14.0.0":
   version: 14.4.3
   resolution: "@testing-library/user-event@npm:14.4.3"
@@ -5330,6 +5344,15 @@ __metadata:
   dependencies:
     "@types/react": "*"
   checksum: e02ea908289a7ad26053308248d2b87f6aeafd73d0e2de2a3d435947bcea0422599016ffd1c3e38ff36c42f5e1c87c7417f05b0a157e48649e4a02f21727d54f
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^18.0.0":
+  version: 18.2.24
+  resolution: "@types/react-dom@npm:18.2.24"
+  dependencies:
+    "@types/react": "*"
+  checksum: 7fb0dd0c88c5219bcc27f1f9bf14d9e1b1593014ee7938dd46ee9782c77c39d1ccc79d2b8364a6113019d7f65c94e4dc3c37425c3972910bb2674cce98d3f3ca
   languageName: node
   linkType: hard
 
@@ -7303,6 +7326,7 @@ __metadata:
     "@storybook/test-runner": ^0.13.0
     "@storybook/testing-library": ^0.2.0
     "@testing-library/jest-dom": ^6.0.0
+    "@testing-library/react": ^14.3.0
     "@types/jest": ^29.5.3
     "@types/node": 20.4.7
     "@types/react": 18.2.18
