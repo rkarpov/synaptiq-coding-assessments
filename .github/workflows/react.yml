@@ -2,13 +2,9 @@ name: React Tests
 
 on:
   push:
-    branches:
-      - "main"
     paths:
       - "react/**"
   pull_request:
-    branches:
-      - "main"
     paths:
       - "react/**"
 
